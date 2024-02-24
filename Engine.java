@@ -31,7 +31,7 @@ public class Engine {
      * Sets the engine in motion when fuel available
      */
     public boolean go() {
-        double value = 30.00;
+        double value = 10.00;
         this.currentFuel -= value; // setcurrentFuel(value)
         System.out.println(this.currentFuel);
         return (this.currentFuel > 0);
