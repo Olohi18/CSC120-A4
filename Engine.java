@@ -10,8 +10,9 @@ public class Engine {
     private double currentFuel;
     private double maxFuel;
 
-    /*
-     * Initializes the attributes for the Engine class
+    /**
+     * Initializes Engine class attributes
+     * @param fuelType and currentFuel level
      */
     public Engine(FuelType fuelType, double currentFuel) {
         this.fuelType = FuelType.ELECTRIC;
@@ -19,16 +20,16 @@ public class Engine {
         this.maxFuel = 500.00;
     }
 
-    /*
-     * Sets the fuel in the engine to the fuel's maximum capacity
+    /**
+     * Sets fuel level in the engine to the maximum capacity
      */
-
     public void refuel() {
         this.currentFuel = this.maxFuel;
     }
 
-    /*
+    /**
      * Sets the engine in motion when fuel available
+     * @return T/F, is currentFuel level sufficient?
      */
     public boolean go() {
         double value = 10.00;
@@ -37,16 +38,13 @@ public class Engine {
         return (this.currentFuel > 0);
     }
 
-    /*
-     * Prints out the amount of fuel left in engine
-     */
+    // Prints out the amount of fuel left in engine
     public String toString() {
         return "The fuel left in your engine is:" + this.currentFuel;
     }
 
     /**
-     * Getter for current fuel available
-     * 
+     * Getter for currentFuel class
      * @return the amount of fuel left
      */
     public double getcurrentFuel() {
@@ -61,9 +59,7 @@ public class Engine {
         this.currentFuel -= x;
     }
 
-    /*
-     * For testing basic functionality of engine class
-     */
+    // main function to test basic functionality of the engine class
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
         while (myEngine.go()) {

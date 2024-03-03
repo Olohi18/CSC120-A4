@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 
-/**
- * Train class
- * Describes the feature of the Train
- */
+//Train class
 public class Train {
     
     public Engine myEngine;
@@ -11,6 +8,7 @@ public class Train {
     public FuelType fuelType;
     public int nCars;
     public double fuelCapacity;
+    
 
     /**
      * Initializes the constructor for the Train class

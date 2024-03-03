@@ -4,27 +4,33 @@
 */
 public class Passenger {
 
+    /**
+     * @param name, name of Passenger
+     */
     private String name;
     public Passenger(String name) {
         this.name = name;
     }
 
+    // prints name of boarded passengers
     public String toString() {
         return this.name;
     }
 
-    /*
-     * Allows passenger to board the car
+    /**
+     * Boards passengers
+     * @param c, car to be boarded
      */
     public void boardCar(Car c) {
         if (c.setaddPassenger(this) == false) { // What's the function of this?
             System.out.println("Car filled! Try another car");
 
         }
-
     }
-    /*
-     * Removes passenger from the car
+
+    /**
+     * Removes passengers from car
+     * @param c, car
      */
     public void getOffCar(Car c) {
         if (c.getremovePassenger(this) == false) {
@@ -32,8 +38,9 @@ public class Passenger {
         }
     }
 
-    /*
-     * For testing basic functionality of the Passenger class 
+    /**
+     * @param args
+     * Main function to test functionality of Passenger class 
      */
     public static void main(String[] args) {
         Passenger passenger1 = new Passenger("Olohi");

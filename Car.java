@@ -9,47 +9,47 @@ public class Car {
     private ArrayList<Passenger> listPassengers;
     private int maxCapacity;
 
-     /*
-     * Constructor that initializes the attributes of the Car class
-     */
+     /**
+      * Constructor that initializes the attributes of the Car class
+      * @param int max, maximum capacity of car
+      */
     public Car(int max){
         this.maxCapacity = max;
         this.listPassengers = new ArrayList<Passenger>(this.maxCapacity);
     }
 
-    /*
-    * Returns the number of Passengers on the car
+    /**
+    * Reflects the number of Passengers on the car
+    * @return number of passengers in the given car
     */
     private int size(){
         int size = this.listPassengers.size();
         return size;
     }
 
-    /*
-     * Returns the maximum capacity of each car
+    /**
+     * Getter for maximum capacity of car
+     * @return maximum capacity of the car
      */
     public int getCapacity(){
         return this.maxCapacity;
     }
 
-    /*
-     * Returns the number of seats remaining
+    /**
+     * Shows the number of available seats remaining
+     * @return this.maxCapacity - size
      */
-    private int seatsRemaining(){
+    public int seatsRemaining(){
         int size = this.size();
-        return this.maxCapacity - size;}
-
-    /** Getters
-     * @return the number of seats available
-     */
-    public int getseatsRemaining(){
-        return this.seatsRemaining();
+        return this.maxCapacity - size;
     }
 
-    /*
+    /**
      * Adds passengers to the car
+     * @param p, passenger to be added
+     * @return T/F, does car contain p?
      */
-    private boolean addPassenger(Passenger p){
+    public boolean addPassenger(Passenger p){
         int size = this.size();
         if (this.listPassengers.contains(p)){
             System.out.println("Passenger in car already");
@@ -65,21 +65,12 @@ public class Car {
         return (this.listPassengers.contains(p));
     }
 
-/**
-     * Setter for adding passenger
-     * @param p Passenger
-     * @return T/F: Is passenger on car? Is there space for boarding?
-     */
-    public boolean setaddPassenger(Passenger p){
-        return addPassenger(p);
-    }
-
     /**
-     * 
      * Removes passenger from car
+     * @param p, Passenger to be removed
+     * @return T/F. Was passenger added successfully?
      */
     private boolean removePassenger(Passenger p){
-        int size = this.size();
         if (this.listPassengers.contains(p)){
             this.listPassengers.remove(p); 
             return true;
@@ -91,18 +82,15 @@ public class Car {
     }
 
     /**
-     * Compares balance to a proposed debit to ensure sufficient funds
+     * Getter for removePassenger class
      * @param Passenger p 
      * @return T/F: Is passenger present?
      */
-
     public boolean getremovePassenger(Passenger p){
         return this.removePassenger(p);
     }
 
-    /*
-     * Returns the passengers in your class
-     */
+    //prints the list of passengers boarded
     public String toString() {
         return "The passengers in you car are:" + this.listPassengers; //Do I put this in the String manifest?
     }
@@ -118,7 +106,7 @@ public class Car {
             else{
             for (Passenger element : this.listPassengers){
                 System.out.println(element);}
-            System.out.println("Done") ;
+            System.out.println("Done!") ;
 
             }
         }
@@ -144,10 +132,8 @@ public class Car {
         car1.addPassenger(passenger2);
 
         car1.getremovePassenger(passenger2);
-        //System.out.println(car1);
-        car1.printManifest(); //Why isn't this line working? I don't know why my printManifest statement isn't working
-    }
+        car1.printManifest();
     
  
-}
+}}
 
