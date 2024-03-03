@@ -70,24 +70,16 @@ public class Car {
      * @param p, Passenger to be removed
      * @return T/F. Was passenger added successfully?
      */
-    private boolean removePassenger(Passenger p){
+    public boolean removePassenger(Passenger p){
         if (this.listPassengers.contains(p)){
-            this.listPassengers.remove(p); 
+            this.listPassengers.remove(p);
+            System.out.println("Removing " + p); 
             return true;
         }
         else{
             System.out.println("Passenger " + p + " not present");
             return false;
         }
-    }
-
-    /**
-     * Getter for removePassenger class
-     * @param Passenger p 
-     * @return T/F: Is passenger present?
-     */
-    public boolean getremovePassenger(Passenger p){
-        return this.removePassenger(p);
     }
 
     //prints the list of passengers boarded
@@ -98,7 +90,7 @@ public class Car {
     /**
      * prints the passengers in the car if any
      */
-    private void printManifest(){
+    public void printManifest(){
             int size = this.size();
             if (size == 0){
                 System.out.println("There are no passengers in your car");
@@ -110,13 +102,6 @@ public class Car {
 
             }
         }
-
-    /**
-     * Getter for the printManifest class
-     */
-    public void getprintManifest(){ //What's sthe use when simply calling the new function(getter) gives me the hidden data
-        printManifest();
-    }
 
     /**
      * The main class to test the Car class works functionally
@@ -131,7 +116,7 @@ public class Car {
         car1.addPassenger(passenger1);
         car1.addPassenger(passenger2);
 
-        car1.getremovePassenger(passenger2);
+        car1.removePassenger(passenger2);
         car1.printManifest();
     
  

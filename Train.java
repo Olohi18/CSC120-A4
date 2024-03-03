@@ -3,48 +3,53 @@ import java.util.ArrayList;
 //Train class
 public class Train {
     
-    public Engine myEngine;
-    public ArrayList<Car> listCars;
-    public FuelType fuelType;
-    public int nCars;
-    public double fuelCapacity;
+    private Engine myEngine;
+    private ArrayList<Car> listCars;
+    private FuelType fuelType;
+    private int nCars;
+    private double fuelCapacity;
     
 
     /**
      * Initializes the constructor for the Train class
+     * @param fuelType, fuelCapacity, number of Cars, passenger Capacity
      */
-
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
         Engine myEngine = new Engine(fuelType, 100);
         this.listCars = new ArrayList<Car>(this.nCars);
     }   
 
     /**
-     * Returns the type of Engine
+     * Getter for Engine type
+     * @return type of Engine
      */
     public Engine getEngine(){
         return this.myEngine;
     }
 
-    /**
-     * Returns the i'th car
+    /** Getter for Car class. Returns the i'th car
+     * @param i, number of car in car order
+     * @return car
      */
-
     public Car getCar(int i){
         return this.listCars.get(i);    
         }
+
     /**
      * Returns the total number of seats remaining on the train
+     * @return total number of seatsRemaining across all cars
      */
     public int seatsRemaining(){
         int seatsRem = 0;
         for (Car car : this.listCars){
-            seatsRem += car.getseatsRemaining();
+            seatsRem += car.seatsRemaining();
         }
         return seatsRem;
     }
+
     /**
-     * Returns the maximum capacity on the train
+     * Returns the total maximum capacity of the cars on the train
+     * @return maxCapacity
      */
     public int getMaxCapacity(){
         int maxCapacity = 0;
@@ -55,18 +60,16 @@ public class Train {
     }
 
     /**
-     * prints the passengers on every car
+     * prints out the names of the passengers on the train
      */
     public void printManifest(){
         for (Car car : this.listCars){
-            car.getprintManifest();
+            car.printManifest();
         }
       
 
     }
-    /*
-     * For testing basic functionality of the Train class
-     */
+    // For testing basic functionality of the Train class
     public static void main(String[] args) {
         Train train = new Train(FuelType.ELECTRIC, 100.0, 5, 5 );
         Car car1 = new Car(4);
@@ -78,9 +81,9 @@ public class Train {
         Passenger p = new Passenger("Olohi");
         Passenger p2 = new Passenger("Jo");
         Passenger p3 = new Passenger("Britney");
-        car1.setaddPassenger(p);
-        car2.setaddPassenger(p2);
-        car3.setaddPassenger(p3);
+        car1.addPassenger(p);
+        car2.addPassenger(p2);
+        car3.addPassenger(p3);
         train.printManifest();
     }
 
