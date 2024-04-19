@@ -6,7 +6,7 @@
  */
 public class Engine {
 
-    public FuelType fuelType;
+    private FuelType fuelType;
     private double currentFuel;
     private double maxFuel;
 
@@ -17,7 +17,7 @@ public class Engine {
     public Engine(FuelType fuelType, double currentFuel) {
         this.fuelType = FuelType.ELECTRIC;
         this.currentFuel = currentFuel;
-        this.maxFuel = 500.00;
+        this.maxFuel = 500.0;
     }
 
     /**
@@ -32,8 +32,9 @@ public class Engine {
      * @return T/F, is currentFuel level sufficient?
      */
     public boolean go() {
-        double value = 10.00;
-        this.currentFuel -= value; // setcurrentFuel(value)
+        int value = 1;
+        if (currentFuel > 0){
+        this.currentFuel -= value;} // setcurrentFuel(value)
         System.out.println(this.currentFuel);
         return (this.currentFuel > 0);
     }
@@ -61,7 +62,7 @@ public class Engine {
 
     // main function to test basic functionality of the engine class
     public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 112.5);
         while (myEngine.go()) {
             System.out.println("Choo choo!");
         }

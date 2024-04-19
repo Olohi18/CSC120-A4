@@ -22,7 +22,7 @@ public class Passenger {
      * @param c, car to be boarded
      */
     public void boardCar(Car c) {
-        if (c.setaddPassenger(this) == false) { // What's the function of this?
+        if (c.addPassenger(this) == false) { // What's the function of this?
             System.out.println("Car filled! Try another car");
 
         }
@@ -33,7 +33,7 @@ public class Passenger {
      * @param c, car
      */
     public void getOffCar(Car c) {
-        if (c.getremovePassenger(this) == false) {
+        if (c.removePassenger(this) == false) {
             System.out.println("Check the other cars");
         }
     }
@@ -46,8 +46,8 @@ public class Passenger {
         Passenger passenger1 = new Passenger("Olohi");
         Car car1 = new Car(5);
         passenger1.boardCar(car1);
-        car1.getprintManifest();
+        car1.printManifest();
         passenger1.getOffCar(car1);
-        car1.getprintManifest();
+        car1.printManifest();
     }
 }
