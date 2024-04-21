@@ -33,7 +33,7 @@ public class Engine {
      */
     public boolean go() {
         int value = 1;
-        if (currentFuel > 0){
+        if (currentFuel >= 0){
         this.currentFuel -= value;} // setcurrentFuel(value)
         System.out.println(this.currentFuel);
         return (this.currentFuel > 0);
@@ -62,7 +62,7 @@ public class Engine {
 
     // main function to test basic functionality of the engine class
     public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 112.0);
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 112);
         while (myEngine.go()) {
             System.out.println("Choo choo!");
         }
