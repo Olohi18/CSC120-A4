@@ -62,7 +62,7 @@ public class Engine {
 
     // main function to test basic functionality of the engine class
     public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 112.5);
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 112.0);
         while (myEngine.go()) {
             System.out.println("Choo choo!");
         }
