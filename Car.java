@@ -108,17 +108,12 @@ public class Car {
      */
     public static void main(String[] args){
         Car car1 = new Car(5);
-        car1.getCapacity();
-        
+        car1.getCapacity(); 
         Passenger passenger1 = new Passenger("Olohi");
         Passenger passenger2 = new Passenger("Karachi");
-
         car1.addPassenger(passenger1);
         car1.addPassenger(passenger2);
-
         car1.removePassenger(passenger2);
-        car1.printManifest();
-    
- 
+        car1.printManifest(); 
 }}
 
