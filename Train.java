@@ -2,12 +2,10 @@ import java.util.ArrayList;
 
 //Train class
 public class Train {
-    
-    private Engine myEngine;
+    private final Engine myEngine = new Engine(FuelType.ELECTRIC, 500);
     private ArrayList<Car> listCars;
-    private FuelType fuelType;
     private int nCars;
-    private double fuelCapacity;
+
     
 
     /**
@@ -15,7 +13,7 @@ public class Train {
      * @param fuelType, fuelCapacity, number of Cars, passenger Capacity
      */
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
-        Engine myEngine = new Engine(fuelType, 100);
+        // Engine myEngine = new Engine(fuelType, 100);
         this.listCars = new ArrayList<Car>(this.nCars);
     }   
 
@@ -28,7 +26,7 @@ public class Train {
     }
 
     /** Getter for Car class. Returns the i'th car
-     * @param i, number of car in car order
+     * @param i, order placement of car 
      * @return car
      */
     public Car getCar(int i){

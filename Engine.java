@@ -5,7 +5,6 @@
  * Moves only when fuel available
  */
 public class Engine {
-
     private FuelType fuelType;
     private double currentFuel;
     private double maxFuel;
